@@ -1,7 +1,9 @@
+import CollapsibleSidebar from "~/components/molecule/collapsable-sidebar";
+
 export const Sidebar = () => {
-    return (
-        <div>
-            <h1>Sidebar</h1>
-        </div>
-    );
+  return (
+    <div>
+      <CollapsibleSidebar />
+    </div>
+  );
 };

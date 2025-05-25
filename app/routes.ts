@@ -7,6 +7,10 @@ export default [
     children: [
       index("routes/home.tsx"),
       {
+        path: "/projects",
+        file: "routes/projects.tsx",
+      },
+      {
         path: "*",
         file: "routes/404.tsx",
       },

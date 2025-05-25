@@ -11,6 +11,10 @@ export default [
         file: "routes/projects.tsx",
       },
       {
+        path: "/projects/:projectId",
+        file: "routes/project-detail.tsx",
+      },
+      {
         path: "*",
         file: "routes/404.tsx",
       },

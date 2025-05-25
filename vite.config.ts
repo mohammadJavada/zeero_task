@@ -3,11 +3,14 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { VitePWA } from "vite-plugin-pwa";
+import path from "path";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [
     tailwindcss(),
     tsconfigPaths(),
+    react(),
     VitePWA({
       registerType: "autoUpdate",
       workbox: {
@@ -16,8 +19,13 @@ export default defineConfig({
       manifest: false,
       filename: "sw.js",
     }),
-    reactRouter(), // Keep this last to ensure proper ordering
+    reactRouter(),
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./app"),
+    },
+  },
   server: {
     headers: {
       "Service-Worker-Allowed": "/",

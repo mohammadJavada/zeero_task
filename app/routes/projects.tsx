@@ -1,13 +1,13 @@
-import type { Route } from "./+types/home";
 import ProjectsPage from "~/components/pages/projects";
+type MetaTag = { title: string } | { name: string; content: string };
 
-export function meta({}: Route.MetaArgs) {
+export function meta({}: MetaTag) {
   return [
     { title: "پروژه ها" },
     { name: "پروژه ها", content: "پروژه های زیرو" },
   ];
 }
 
-export default function Home() {
+export default function Projects() {
   return <ProjectsPage />;
 }

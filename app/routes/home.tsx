@@ -1,8 +1,8 @@
 import { HomePage } from "~/components/pages/home";
-import type { Route } from "./+types/home";
 
+type MetaTag = { title: string } | { name: string; content: string };
 
-export function meta({}: Route.MetaArgs) {
+export function meta({}: MetaTag) {
   return [
     { title: "صفحه اصلی | مدیریت وظیفه" },
     { name: "صفحه اصلی", content: "صدیریت وظیفه" },
